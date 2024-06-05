@@ -10,17 +10,20 @@ import org.testng.annotations.BeforeClass;
 
 public class BaseTest {
 
-	public WebDriver driver;
+	public static WebDriver driver;
+	public BasePage app;
 	
 	@BeforeClass
 	public void setup() {
 		//FirefoxDriver()
 		//EdgeDriver()
 		//System.set.property("webdriver.chrome.driver", "path to chromedriver.exe");
-		driver = new FirefoxDriver();
+		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://keybooks.ro/");
+		
+		app = new BasePage();
 		
 	}
 	

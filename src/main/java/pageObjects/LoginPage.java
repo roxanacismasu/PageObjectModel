@@ -3,7 +3,9 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
+import selenium.utils.SeleniumWrappers;
+
+public class LoginPage extends SeleniumWrappers{
 	
 	public WebDriver driver;
 	
@@ -25,7 +27,8 @@ public class LoginPage {
 		
 		driver.findElement(userField).sendKeys(username);
 		driver.findElement(passField).sendKeys(password);
-		driver.findElement(submitButton).click();
+		//driver.findElement(submitButton).click();
+		click(submitButton);
 		
 	}
 	
@@ -33,9 +36,9 @@ public class LoginPage {
 		return driver.findElement(locator).isDisplayed();
 	}
 	
-	public void logoutFromApp() {
+	/*public void logoutFromApp() {
 		driver.findElement(logoutBtn).click();
-	}
+	}*/
 	
 	
 }
