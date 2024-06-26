@@ -25,8 +25,7 @@ public class IframeExample extends BaseTest{
 
 		driver.switchTo().defaultContent();
 		app.sendKeys(app.contacts.nameField, "TEST TEST"); 
-		
-		
+		app.scrollVertically(-200);	
 		//drag and drop map
 		driver.switchTo().frame(app.getWebElement(app.contacts.mapFrame));
 		app.click(app.contacts.zoomInBtn);
